@@ -10,13 +10,17 @@ namespace Lab_5
     {
         private string position;
         public string Position { get => position; set => position = value; }
-        public Admistration(string name, int work_experiance, int amount_employe, string position)
-            : base(name, work_experiance, amount_employe)
+        public Admistration(string name, string country, string city, string sex, int age, int work_experiance, int amount_employe, string position)
+            : base(name, country, city, sex, age, work_experiance, amount_employe)
         {
             Position = position;
         }
         public Admistration()
         {
+        }
+        public void Print_Admistration()
+        {
+            Console.WriteLine("\nPosition: " + Position);
         }
     }
 

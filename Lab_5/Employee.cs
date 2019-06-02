@@ -17,14 +17,23 @@ namespace Lab_5
         public string Country { get => country; set => country = value; }
         public string City { get => city; set => city = value; }
         public string Sex { get => sex; set => sex = value; }
-        public int Age { get => age; set => age = value; }
+        public int Age { get => age; set => age = value >= 18 && value <= 75 ? value : 18; }
 
-        public Employee(string name)
+        public Employee(string name, string country, string city, string sex, int age)
         {
             Name = name;
+            Country = country;
+            City = city;
+            Sex = sex;
+            Age = age;
         }
+
         public Employee()
         {
+        }
+        public void Print_Employee()
+        {
+            Console.WriteLine("\nName: " + Name + "\nSex: " + Sex + "\nAge: " + Age + "\nCountry: " + Country + "\nCity: " + City);
         }
     }
 }
