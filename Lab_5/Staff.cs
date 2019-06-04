@@ -23,5 +23,11 @@ namespace Lab_5
         {
             Console.WriteLine( "\nAmount employee: " + Amount_employe);
         }
+        public void Edit_Staff()
+        {
+            Console.Clear();
+            Console.WriteLine("Change field about the number of employees:\n");
+            Amount_employe = Convert.ToInt32(Console.ReadLine());
+        }
     }
 }

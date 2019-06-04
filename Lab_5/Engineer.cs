@@ -23,6 +23,11 @@ namespace Lab_5
         {
             Console.WriteLine("\nWork Experiance: " + Work_experiance);
         }
-
+        public void Edit_Engineer()
+        {
+            Console.Clear();
+            Console.WriteLine("Change field of work experiance:\n");
+            Work_experiance = Convert.ToInt32(Console.ReadLine());
+        }
     }
 }

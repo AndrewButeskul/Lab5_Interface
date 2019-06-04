@@ -22,6 +22,13 @@ namespace Lab_5
         {
             Console.WriteLine("\nPosition: " + Position);
         }
+        public void Edit_Admistration()
+        {
+            Console.Clear();
+            Console.WriteLine("Change the field about the position:\n");
+            Position = Console.ReadLine();
+        }
+
     }
 
 }

@@ -9,19 +9,71 @@ namespace Lab_5
     class Program
     {
         delegate void Method();
-        static void Main(string[] args)
+
+        static void Edit(Admistration admistration)
         {
+            int selection = 0;
+            Console.WriteLine("Choose menu: (1 - Name | 2 - Work experiance | 3 - Amount employees | 4 - Position)\n");
+            selection = Convert.ToInt32(Console.ReadLine());
+            Method edit;
+            switch(selection)
+            {
+                case 1:
+                    edit = admistration.Edit_Employee;
+                    edit();
+                    break;
+                case 2:
+                    edit = admistration.Edit_Engineer;
+                    edit();
+                    break;
+                case 3:
+                    edit = admistration.Edit_Staff;
+                    edit();
+                    break;
+                case 4:
+                    edit = admistration.Edit_Admistration;
+                    edit();
+                    break;
+                default:
+                    Console.WriteLine("Error input");                    
+                    break;                       
+            }
+        }
+        static void Print(Admistration admistration)
+        {
+            Console.Clear();
             Method pointer;
-
-            Admistration admistration = new Admistration("Mike", "Ukraine", "Odessa", "Man", 25, 8, 22, "Manager");
-
             pointer = admistration.Print_Employee;
             pointer += admistration.Print_Engineer;
             pointer += admistration.Print_Staff;
             pointer += admistration.Print_Admistration;
             pointer();
+        }
+        static void Main(string[] args)
+        {
+            int selection = 0;
+            Admistration admistration = new Admistration("Mike", "Ukraine", "Odessa", "Man", 25, 8, 22, "Manager");
+
+            Print(admistration);
+
+            Link:
+            Console.WriteLine("\nDo you want to edit infornation? (Yes - 1 | Exit - 2)");
+            selection = Convert.ToInt32(Console.ReadLine());
+            switch (selection)
+            {
+                case 1:
+                    Edit(admistration);
+                    Print(admistration);
+                    goto Link;
+                case 2:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("\nError input!");
+                    goto Link;
+            }
             Console.ReadKey();
-        }      
+        }   
 
        
        

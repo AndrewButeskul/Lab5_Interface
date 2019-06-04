@@ -35,5 +35,13 @@ namespace Lab_5
         {
             Console.WriteLine("\nName: " + Name + "\nSex: " + Sex + "\nAge: " + Age + "\nCountry: " + Country + "\nCity: " + City);
         }
+
+        public void Edit_Employee()
+        {
+            Console.Clear();
+            Console.WriteLine("Change the name field:\n");
+            Name = Console.ReadLine();
+        }
+
     }
 }
